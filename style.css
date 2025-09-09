@@ -1,0 +1,165 @@
+/* CSS Variables (Root) */
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #ff6b6b;
+    --text-color: #333;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    --font-family: 'Cairo', sans-serif;
+    --heading-font: 'Amiri', serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.hero-heading {
+    font-family: var(--heading-font);
+}
+
+.bg-gradient {
+    background-image:
+        radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(45, 100%, 72%, 1) 0px, transparent 50%);
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.text-shadow {
+    text-shadow: 3px 3px 6px var(--shadow);
+}
+
+.counter {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.counter.animate {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 640px) {
+    body {
+        font-size: 11px;
+    }
+
+    .hero-heading {
+        font-size: 1.5rem !important;
+        line-height: 2.5rem;
+        text-align: center;
+    }
+
+    nav.hidden.md\:flex {
+        display: none !important;
+    }
+
+    #mobile-menu {
+        position: fixed;
+        top: 4rem;
+        right: 0;
+        width: 100%;
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+        z-index: 1000;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card {
+        padding: 1.5rem !important;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .card p {
+        font-size: 1.1rem !important;
+    }
+
+    .flex-col,
+    .flex-row,
+    .flex-row-reverse {
+        flex-direction: column !important;
+    }
+
+    img.md\:w-1\/2 {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 1rem !important;
+        object-fit: cover;
+    }
+
+    .flex.space-x-4>button {
+        width: 100% !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    progress {
+        height: 6px !important;
+    }
+
+    #tasbih-count {
+        font-size: 4rem !important;
+    }
+
+    #increment-tasbih,
+    #reset-tasbih {
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}
