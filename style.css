@@ -17,8 +17,12 @@ body {
     font-family: var(--font-family);
     background-color: var(--bg-color);
     color: var(--text-color);
-    margin: 30px 0 0 0;
+    margin: 0;
     padding: 0;
+}
+
+#home {
+    margin-top: 40px;
 }
 
 .hero-heading {
@@ -165,3 +169,4 @@ html {
     }
 
 }
+
